@@ -1,0 +1,45 @@
+<!--
+  ~ Create date 6/7/20 7:46 PM
+  ~
+  ~ Copyright 2020 Pidsamhai
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+    <style name="Base.Theme.Movie" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/movie_pink_500</item>
+        <item name="colorOnPrimary">@color/movie_purple_500</item>
+        <item name="colorPrimaryDark">@color/movie_pink_700</item>
+        <item name="colorOnSurface">@color/movie_black</item>
+        <item name="colorAccent">@color/movie_pink_700</item>
+        <item name="colorSurface">@color/movie_gray_50</item>
+        <item name="colorSecondary">@color/movie_purple_500</item>
+        <item name="android:colorBackground">@color/movie_pink_500</item>
+    </style>
+
+    <style name="Theme.Movie" parent="Base.Theme.Movie"/>
+
+    <style name="Theme.Movie.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.movie.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
+
+    <style name="TextAppearance.movie.Toolbar.Text" parent="TextAppearance.MaterialComponents.Headline5" >
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+</resources>
