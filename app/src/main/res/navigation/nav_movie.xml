@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Create date 6/7/20 2:35 PM
   ~
   ~ Copyright 2020 Pidsamhai
@@ -18,10 +17,26 @@
   -->
 
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_movie"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_movie"
     app:startDestination="@id/homeFragmentViewpager">
     <fragment
         android:id="@+id/homeFragmentViewpager"
         android:name="com.github.psm.movies.ui.fragment.HomeFragmentViewpager"
-        android:label="HomeFragmentViewpager" />
+        android:label="HomeFragmentViewpager"
+        tools:layout="@layout/fragment_view_pager">
+        <action
+            android:id="@+id/action_homeFragmentViewpager_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.github.psm.movies.ui.fragment.MovieDetailFragment"
+        android:label="MovieDetailFragment"
+        tools:layout="@layout/fragment_movie_detail">
+        <argument
+            android:name="movieID"
+            app:argType="string" />
+    </fragment>
 </navigation>

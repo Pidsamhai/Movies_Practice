@@ -30,5 +30,8 @@ interface MovieDao {
     fun insertMovie(movieList: List<Movie>)
 
     @Query("SELECT * FROM MOVIES")
-    fun getMovies():LiveData<List<Movie>>
+    fun getAllMovies():LiveData<List<Movie>>
+
+    @Query("SELECT * FROM MOVIES WHERE movieID = :id LIMIT 1")
+    fun getMovie(id:String):LiveData<Movie>
 }

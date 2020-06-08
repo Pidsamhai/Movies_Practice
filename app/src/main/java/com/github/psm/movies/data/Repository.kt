@@ -19,7 +19,8 @@
 package com.github.psm.movies.data
 
 class Repository private constructor(private val movieDao:MovieDao) {
-    fun getMovie() = movieDao.getMovies()
+    fun getAllMovie() = movieDao.getAllMovies()
+    fun getMovie(id: String) = movieDao.getMovie(id)
 
     companion object {
         @Volatile

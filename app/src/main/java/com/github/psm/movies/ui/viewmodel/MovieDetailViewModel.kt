@@ -1,5 +1,5 @@
 /*
- * Create date 6/7/20 6:18 PM
+ * Create date 6/8/20 5:18 PM
  *
  * Copyright 2020 Pidsamhai
  *
@@ -16,17 +16,11 @@
  * limitations under the License.
  */
 
-package com.github.psm.movies.adapter
+package com.github.psm.movies.ui.viewmodel
 
-import android.util.Log
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
-import coil.Coil
-import coil.api.load
+import androidx.lifecycle.ViewModel
+import com.github.psm.movies.data.Repository
 
-@BindingAdapter("imageFromUrl")
-fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
-    if (!imageUrl.isNullOrEmpty()) {
-        view.load(imageUrl)
-    }
+class MovieDetailViewModel internal constructor(movieId:String,repository: Repository): ViewModel() {
+    val movie = repository.getMovie(movieId)
 }

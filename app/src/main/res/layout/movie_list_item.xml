@@ -33,7 +33,7 @@
 
     <com.github.psm.movies.view.CustomCardView
         android:elevation="2dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -43,17 +43,16 @@
         app:shapeAppearance="@style/ShapeAppearance.Movie.Card">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/movie_item_image"
-                android:layout_width="150dp"
-                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 app:imageFromUrl="@{movie.pictureUrl}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="H,9:16"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

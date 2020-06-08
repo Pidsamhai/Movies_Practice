@@ -18,11 +18,17 @@
 
 package com.github.psm.movies.ui.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.github.psm.movies.data.Movie
+import androidx.lifecycle.ViewModelProvider
 import com.github.psm.movies.data.Repository
 
-class MovieListViewModel internal constructor(repository: Repository) : ViewModel() {
-    val movies:LiveData<List<Movie>> = repository.getAllMovie()
+@Suppress("UNCHECKED_CAST")
+class MovieDetailViewModelFactory(private val movieID:String,private val repository: Repository) : ViewModelProvider.Factory {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(MovieDetailViewModel::class.java))
+            return MovieDetailViewModel(movieID,repository) as T
+        else
+            throw Exception("Assign Error")
+    }
+
 }

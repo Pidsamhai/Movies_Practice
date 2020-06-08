@@ -19,12 +19,15 @@
 package com.github.psm.movies.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.github.psm.movies.data.Movie
 import com.github.psm.movies.databinding.MovieListItemBinding
+import com.github.psm.movies.ui.fragment.HomeFragmentViewpagerDirections
 import com.github.psm.movies.ui.fragment.MovieFragment
 
 /**
@@ -33,8 +36,11 @@ import com.github.psm.movies.ui.fragment.MovieFragment
 
 class MovieListAdapter : ListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, vifewType: Int): RecyclerView.ViewHolder {
-        return MovieViewHolder(MovieListItemBinding.inflate(
-            LayoutInflater.from(parent.context), parent, false))
+        return MovieViewHolder(
+            MovieListItemBinding.inflate(
+                LayoutInflater.from(parent.context), parent, false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -42,13 +48,31 @@ class MovieListAdapter : ListAdapter<Movie, RecyclerView.ViewHolder>(MovieDiffCa
         (holder as MovieViewHolder).bind(movie)
     }
 
-     internal class MovieViewHolder(private val binding: MovieListItemBinding) :
+    internal class MovieViewHolder(private val binding: MovieListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.setClickListener {
+                binding.movie?.let { movie ->
+                    navigateToMovie(movie, it)
+                }
+            }
+        }
+
         fun bind(item: Movie) {
             binding.apply {
                 movie = item
                 executePendingBindings()
             }
+        }
+
+
+        private fun navigateToMovie(movie: Movie, v: View) {
+            val direction =
+                HomeFragmentViewpagerDirections.actionHomeFragmentViewpagerToMovieDetailFragment(
+                    movie.movieID
+                )
+            v.findNavController().navigate(direction)
         }
     }
 

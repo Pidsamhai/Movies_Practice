@@ -22,6 +22,7 @@ import android.content.Context
 import androidx.fragment.app.Fragment
 import com.github.psm.movies.data.AppDataBase
 import com.github.psm.movies.data.Repository
+import com.github.psm.movies.ui.viewmodel.MovieDetailViewModelFactory
 import com.github.psm.movies.ui.viewmodel.MovieListViewModel
 import com.github.psm.movies.ui.viewmodel.MovieListViewModelFactory
 
@@ -34,5 +35,12 @@ object InjectUtils {
     ): MovieListViewModelFactory {
         val repository = getPlantRepository(fragment.requireContext())
         return MovieListViewModelFactory(repository)
+    }
+    fun provideMovieDetailViewModelFactory(
+        movieID:String,
+        fragment: Fragment
+    ): MovieDetailViewModelFactory {
+        val repository = getPlantRepository(fragment.requireContext())
+        return MovieDetailViewModelFactory(movieID,repository)
     }
 }
