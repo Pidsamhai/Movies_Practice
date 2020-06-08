@@ -10,4 +10,13 @@
     <color name="movie_white">#deffffff</color>
     <color name="movie_purple_300">#9575CD</color>
     <color name="movie_purple_500">#673AB7</color>
+
+
+    <color name="movie_red_300">#ffeaee</color>
+    <color name="movie_red_500">#ff9595</color>
+    <color name="movie_red_700">#ff4848</color>
+    <color name="movie_red_900">#AC010F</color>
+    <color name="movie_red_1000">#77000A</color>
+    <color name="movie_green_300">#80bdab</color>
+    <color name="movie_green_500">#349176</color>
 </resources>

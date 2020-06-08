@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Create date 6/7/20 2:58 PM
+  ~ Create date 6/8/20 4:24 PM
   ~
   ~ Copyright 2020 Pidsamhai
   ~
@@ -17,7 +17,10 @@
   ~ limitations under the License.
   -->
 
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="?attr/colorOnPrimary" android:state_activated="true" />
-    <item android:color="?attr/colorPrimaryDark" android:state_active="false"/>
-</selector>
+<resources>
+
+    <style name="Theme.Movie" parent="Base.Theme.Movie">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+</resources>
