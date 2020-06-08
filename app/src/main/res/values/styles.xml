@@ -19,14 +19,23 @@
 <resources>
 
     <style name="Base.Theme.Movie" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/movie_pink_500</item>
-        <item name="colorOnPrimary">@color/movie_purple_500</item>
-        <item name="colorPrimaryDark">@color/movie_pink_700</item>
+<!--        <item name="colorPrimary">@color/movie_pink_500</item>-->
+<!--        <item name="colorOnPrimary">@color/movie_purple_500</item>-->
+<!--        <item name="colorPrimaryDark">@color/movie_pink_700</item>-->
+<!--        <item name="colorOnSurface">@color/movie_black</item>-->
+<!--        <item name="colorAccent">@color/movie_pink_700</item>-->
+<!--        <item name="colorSurface">@color/movie_gray_50</item>-->
+<!--        <item name="colorSecondary">@color/movie_purple_500</item>-->
+<!--        <item name="android:colorBackground">@color/movie_pink_500</item>-->
+
+        <item name="colorPrimary">@color/movie_red_500</item>
+        <item name="colorOnPrimary">@color/movie_green_500</item>
+        <item name="colorPrimaryDark">@color/movie_red_700</item>
         <item name="colorOnSurface">@color/movie_black</item>
-        <item name="colorAccent">@color/movie_pink_700</item>
+        <item name="colorAccent">@color/movie_red_700</item>
         <item name="colorSurface">@color/movie_gray_50</item>
-        <item name="colorSecondary">@color/movie_purple_500</item>
-        <item name="android:colorBackground">@color/movie_pink_500</item>
+        <item name="colorSecondary">@color/movie_green_500</item>
+        <item name="android:colorBackground">@color/movie_red_500</item>
     </style>
 
     <style name="Theme.Movie" parent="Base.Theme.Movie"/>
